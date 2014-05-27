@@ -4,4 +4,9 @@
 .album {
   height: 300px;
   overflow: scroll;
+  .album-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }

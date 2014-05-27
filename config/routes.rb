@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :albums, only: [:show, :index, :new, :create]
 
+  resources :artists, only: [:new, :create]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
