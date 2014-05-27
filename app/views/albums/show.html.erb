@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="pull-left album-cover-image thumbnail">
+    <%= image_tag "/uploads/#{@album.cover_image}" %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= @album.title %></h4>
+    <h5><%= @album.artist.name %></h5>
+    <h6><%= @album.release_date %></h6>
+    <%= @album.description %>
+  </div>
+</div>
