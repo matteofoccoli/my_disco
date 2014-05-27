@@ -1,0 +1,15 @@
+<p>Adding song to <strong></stront><%= @album.title.titleize %></strong></p>
+<%= form_for @song, url: album_songs_path, html: {role: 'form'} do |f| %>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :duration %>
+      <%= f.number_field :duration, class: 'form-control', placeholder: 'Duration', step: 'any' %>
+    </div>
+    <div class="form-group pull-right">
+      <%= link_to 'Cancel', @album, class: 'btn btn-default'%>
+      <%= f.submit class: 'btn btn-success' %>
+    </div>
+<% end %>

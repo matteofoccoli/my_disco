@@ -9,9 +9,9 @@ Artist.delete_all
 u2 = Artist.create(name: 'U2')
 
 Album.delete_all
-Album.create(title: 'Rattle and Hum',
-             cover_image: 'rah.jpg',
-             description: 'Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.', release_date: Date.new(1988, 10, 10), artist: u2)
+rah = Album.create(title: 'Rattle and Hum',
+                   cover_image: 'rah.jpg',
+                   description: 'Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Vestibulum id ligula porta felis euismod semper. Maecenas sed diam eget risus varius blandit sit amet non magna. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.', release_date: Date.new(1988, 10, 10), artist: u2)
 
 Album.create(title: 'The Joshua Tree',
              cover_image: 'tjt.jpg',
@@ -24,3 +24,10 @@ Album.create(title: 'The Unforgettable Fire',
 Album.create(title: 'Achtung Baby',
              cover_image: 'ab.jpg',
              description: 'Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.', release_date: Date.new(1991, 11, 18), artist: u2)
+
+Song.delete_all
+Song.create(title: "Helter Skelter (live)", duration: 3.07, album: rah)
+Song.create(title: "Van Diemen's Land", duration: 3.05, album: rah)
+Song.create(title: "Desire", duration: 2.59, album: rah)
+Song.create(title: "Hawkmoon 269", duration: 6.23, album: rah)
+Song.create(title: "All Along the Watchtower (live)", duration: 4.24, album: rah)

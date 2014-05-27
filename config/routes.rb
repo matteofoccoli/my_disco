@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'songs/new'
+
+  get 'songs/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'albums#index'
 
-  resources :albums, only: [:show, :index, :new, :create]
+  resources :albums, only: [:show, :index, :new, :create] do
+    resources :songs, only: [:new, :create]
+  end
 
   resources :artists, only: [:new, :create]
 

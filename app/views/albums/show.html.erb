@@ -3,9 +3,33 @@
     <%= image_tag "/uploads/#{@album.cover_image}" %>
   </div>
   <div class="media-body">
-    <h4 class="media-heading"><%= @album.title %></h4>
-    <h5><%= @album.artist.name %></h5>
-    <h6><%= @album.release_date %></h6>
+    <h3 class="media-heading"><%= @album.title %></h3>
+    <h4><%= @album.artist.name %></h4>
+    <h5><%= @album.release_date %></h5>
     <%= @album.description %>
   </div>
+</div>
+
+<% if !@album.songs.empty? %>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Song</th>
+    <th>Duration</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @album.songs.each do |s| %>
+      <tr>
+        <td><%= s.title.titleize %></td>
+        <td><%= s.duration %></td>
+        <td><span class="glyphicon glyphicon-play"></span></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<% end %>
+<div class="pull-right">
+  <%= link_to "Add Song", new_album_song_path(@album), class: 'btn btn-primary' %>
 </div>

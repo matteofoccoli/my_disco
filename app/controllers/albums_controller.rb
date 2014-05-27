@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @albums = Album.joins(:artist).all.order('artists.name ASC, release_date ASC')
   end
 
   def new
