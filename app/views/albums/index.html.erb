@@ -2,9 +2,10 @@
   <% for a in @albums %>
     <div class="col-md-3">
       <div class="thumbnail album">
-        <h4 class="album-title"><%= a.title %></h4>
+        <%= image_tag "/uploads/#{a.cover_image}" %>
+        <h4 class="album-title"><%= a.title.titleize %></h4>
         <h5 class="album-artist"><%= a.artist.name %></h5>
-        <p class="album-description"><%= a.description %></p>
+        <p class="album-release-date"><%= a.release_date %></p>
       </div>
     </div>
   <% end %>
