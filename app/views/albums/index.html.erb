@@ -1,0 +1,11 @@
+<div class="row">
+  <% for a in @albums %>
+    <div class="col-md-3">
+      <div class="thumbnail album">
+        <h4 class="album-title"><%= a.title %></h4>
+        <h5 class="album-artist"><%= a.artist.name %></h5>
+        <p class="album-description"><%= a.description %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
